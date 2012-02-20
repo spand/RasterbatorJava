@@ -1,0 +1,7 @@
+Java port of the Rasterbator application (http://arje.net/rasterbator, now dead).
+
+The code was originally written in C#. The code that formed the basis for this port was downloaded from
+http://code.google.com/p/rasterbator/
+
+Licence
+GNU GPL 3.

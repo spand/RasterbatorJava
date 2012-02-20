@@ -32,7 +32,7 @@ public class Rasterbator extends JFrame {
 
     //public static System.Resources    .ResourceManager resources = new System.Resources.ResourceManager("Rasterbator.src.Rasterbator", Assembly.GetExecutingAssembly());
 
-//    public static RasterJob currentJob = new RasterJob();
+    public static RasterJob currentJob = new RasterJob();
 
 //    private HeaderPanel headerPanel = new HeaderPanel();
     private AssistantControl tabControl1 = new AssistantControl();

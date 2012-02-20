@@ -3,6 +3,7 @@ package rasterbator.gui;
 import rasterbator.Rasterbator;
 import rasterbator.gui.assistant.AssistantPage;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
+import java.io.IOException;
 
 public class SourceFilePanel extends AssistantPage {
 
@@ -111,7 +113,11 @@ public class SourceFilePanel extends AssistantPage {
     @Override
     public void afterLeaveHandler ()
     {
-//        Rasterbator.currentJob.OriginalImage = Image.FromFile (textBox1.Text) as Bitmap;
-//        Rasterbator.currentJob.OriginalFilename = textBox1.Text;
+        try {
+            Rasterbator.currentJob.OriginalImage = ImageIO.read(new File(textBox1.getText()));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Rasterbator.currentJob.OriginalFilename = textBox1.getText();
     }
 }
